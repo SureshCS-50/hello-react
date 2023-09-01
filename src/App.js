@@ -11,7 +11,7 @@ function App() {
       <Greet name="dude" heroname={'heroname'}/>
       <Welcome name="dude" heroname={'heroname'}/>
       {/* <Message/> */}
-      {/* <Counter/> */}
+      <Counter/>
     </div>
   );
 }
