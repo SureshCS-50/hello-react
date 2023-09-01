@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export class ClassClick extends Component {
+class ClassClick extends Component {
 
   clickEvent(){
     console.log('Button Clicked');
@@ -9,7 +9,7 @@ export class ClassClick extends Component {
   render() {
     return (
       <div>
-        <button onClick={this.clickEvent}>Click</button>
+        <button onClick={this.clickEvent}>Click me</button>
       </div>
     )
   }
