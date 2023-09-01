@@ -9,7 +9,7 @@ export class ClassClick extends Component {
   render() {
     return (
       <div>
-        <button onClick={() => this.clickEvent()}>Click</button>
+        <button onClick={this.clickEvent}>Click</button>
       </div>
     )
   }
