@@ -7,7 +7,7 @@ export class EventBind extends Component {
       message: "Button Clicked",
       count: 0
     }
-    this.bindClickEvent = this.bindClickEvent.bind(this);
+    this.constructorBinding = this.constructorBinding.bind(this);
   }
 
   bindClickEvent(){
@@ -16,7 +16,7 @@ export class EventBind extends Component {
     })
   }
 
-  bindClickEventError(){
+  constructorBinding(){
     this.setState({
       count: this.state.count + 1
     })
@@ -38,7 +38,7 @@ export class EventBind extends Component {
               <h1>{message} - {count}</h1>
           </div>
           <h2>"this" keyword is not binded to the class component so, clicking this button will throw error because "this" is undefined here</h2>
-          <button onClick={this.bindClickEventError}>throws error - binding not done</button>
+          <button onClick={this.bindClickEvent}>throws error - binding not done</button>
           <h2>Approach 1:</h2>
           <h2>Binding a button using bind keyword - "this.bindClickEvent.bind(this)"</h2>
           <h3>When the state changes, this binding will cause the significant impact on the performance, as we are binding inside the render method</h3>
@@ -46,11 +46,12 @@ export class EventBind extends Component {
           <h2>Approach 2:</h2>
           <h2>Binding a button using an arrow function - "() ={'>'} this.bindClickEvent()"</h2>
           <h3>When the state changes, this binding will cause the significant impact on the performance, as we are binding inside the render method</h3>
+          <h3>Easy to pass values to the function in this approach</h3>
           <button onClick={() => this.bindClickEvent()}>Click me</button>
           <h2>Approach 3:</h2>
           <h2>Binding a button in constructor "this.bindClickEvent = this.bindClickEvent.bind(this)"</h2>
           <h3>As we are binding the button in constructor, binding happens once in this Component so, no issue in performance</h3>
-          <button onClick={this.bindClickEvent}>Click me</button>
+          <button onClick={this.constructorBinding}>Click me</button>
           <h2>Approach 4:</h2>
           <h2>Binding a button to an arrow function</h2>
           <h3>As we are binding to an arrow function, binding happens once in this Component so, no issue in performance</h3>
